@@ -56,7 +56,7 @@ public class GameView extends ViewGroup {
                             && ((circles[j][i].getTop() + circles[j][i].getTranslationY()) < (view.getTop() + width / 20))) {
                         circles[j][i].setVisibility(View.INVISIBLE);
                         count++;
-                        Log.e("atest", count + "");
+                        Toast.makeText(context, count + "", Toast.LENGTH_SHORT);
                     }
                 }
             }
