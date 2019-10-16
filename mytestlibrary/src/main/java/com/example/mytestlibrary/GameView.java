@@ -29,6 +29,7 @@ public class GameView extends ViewGroup {
     private int width = 0, height = 0;
     private int time = 6;
     private TextView view = null;
+    private TextView countTv = null;
     private int count = 0;
     private int co = 2;
     private int ro = 10;
@@ -56,7 +57,7 @@ public class GameView extends ViewGroup {
                             && ((circles[j][i].getTop() + circles[j][i].getTranslationY()) < (view.getTop() + width / 20))) {
                         circles[j][i].setVisibility(View.INVISIBLE);
                         count++;
-                        Toast.makeText(context, count + "", Toast.LENGTH_SHORT);
+                        countTv.setText(count+"");
                     }
                 }
             }
@@ -159,6 +160,7 @@ public class GameView extends ViewGroup {
         this.context = context;
         RelativeLayout root = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.games_layout, this, false);
         view = root.findViewById(R.id.view);
+        countTv = root.findViewById(R.id.count);
 
         view.setOnTouchListener(onTouchListener);
 
